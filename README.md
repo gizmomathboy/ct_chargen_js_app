@@ -13,11 +13,11 @@ The rough process goes something like this:
 5. If the service has ranks check for commission. Skip if already have a commission
 6. If you have a commission check for promotion
 7. Select a skills table to roll on. Initial term of service you get 2 skills rolls.
-..* Scouts alwasy get 2 skill rolls per term
-..* for each commission or promotion in a term another skill roll is done
+  * Scouts alwasy get 2 skill rolls per term
+  * for each commission or promotion in a term another skill roll is done
 8. Decide to whether to reenlist or muster out
-..* reenlist roll is always done. On a 12 you are forced to reenlist
-..* forced to muster out after the 7th term unless you are forced to reenlist
-..* if this is the end of term 4 then aging effects are determined
-..* if reenlisting go to step 4
+  * reenlist roll is always done. On a 12 you are forced to reenlist
+  * forced to muster out after the 7th term unless you are forced to reenlist
+  * if this is the end of term 4 then aging effects are determined
+  * if reenlisting go to step 4
 9. Mustering out has similar complexit and not describing here just yet
