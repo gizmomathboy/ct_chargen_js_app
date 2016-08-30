@@ -20,4 +20,4 @@ The rough process goes something like this:
   * forced to muster out after the 7th term unless you are forced to reenlist
   * if this is the end of term 4 then aging effects are determined
   * if reenlisting go to step 4
-9. Mustering out has similar complexit and not describing here just yet
+9. Mustering out has similar complexity and not describing here just yet
