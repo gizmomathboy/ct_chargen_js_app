@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>click demo</title>
+  <style>
+   .button{
+     color: red;
+     background-color: black;
+     border-radius: 25px ;
+     border: 2px solid red ;
+     padding: 5px;
+     }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.1.0.slim.min.js"></script>
+  <script src="./travellercharacter.js"></script>
+
+</head>
+<body>
+
+<h1>Classic Traveller Character Generator</h1>
+<span id="click-upp" class="button">Generate UPP</span>
+<table>
+  <tr>
+    <!-- Comment -- -- -- -- -- -- -- -- -- -- -->
+    <td>
+      <table>
+        <tr>
+          <td>Strength</td> <td id="strength"></td>
+          <td>Intelligence</td> <td id="intelligence"></td>
+        </tr>
+        <tr>
+          <td>Dexterity</td> <td id="dexterity"></td>
+          <td>Education</td> <td id="education"></td>
+        </tr>
+        <tr>
+          <td>Endurance</td> <td id="endurance"></td>
+          <td>Social Standing</td> <td id="social_standing"></td>
+        </tr>
+      </table>
+    </td>
+    <!-- Comment -- -- -- -- -- -- -- -- -- -- -->
+    <td valign="top">
+      <table>
+        <tr>
+          <td>Service</td><td id="service"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<div id="enlist" class="hidden">
+<p>Select Service to attempt enlistment</p>
+  <span id="click-enlist-navy" class="button">Navy</span>
+  <span id="click-enlist-marines" class="button">Marines</span>
+  <span id="click-enlist-army" class="button">Army</span>
+  <span id="click-enlist-scouts" class="button">Scouts</span>
+  <span id="click-enlist-merchants" class="button">Merchants</span>
+  <span id="click-enlist-other" class="button">Other</span>
+</ul>
+</div>
+
+<div>Test<span id="test">stuff</span></div>
+ 
+<script>
+//---------------- "s" object holds service definitions ----------------//
+var s = {};
+s.services = ['navy', 'marines', 'army', 'scouts', 'merchants', 'other'];
+s.draft = function () {
+    return arnd(this.services);
+};
+
+$(".hidden").hide();
+$("#test").html(s);
+
+var upp = ["strength", "dexterity", "endurance", "intelligence", "education", "social_standing"];
+
+var t = {};
+$(function(){
+  $('#click-upp').click(function(){
+  console.log("in click-upp");
+
+    t.attributes = {
+      strength: roll(2),
+      dexterity: roll(2),
+      endurance: roll(2),
+      intelligence: roll(2),
+      education: roll(2),
+      social_standing: roll(2)
+    };
+
+    for (var key in t.attributes) {
+      $("#"+key).append(document.createTextNode(t.attributes[key]));
+    }
+    $("#click-upp").hide();
+    $("#enlist").show();
+  });
+});
+
+function roll(rolls) {
+    // Return total of six-sided dice rolls.
+    var total = 0;
+    for (var i = 0; i < rolls; i++) {
+        total += Math.floor(Math.random() * 6 + 1);
+    }
+    return total;
+}
+
+</script>
+ 
+</body>
+</html>
